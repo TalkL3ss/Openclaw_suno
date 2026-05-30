@@ -1,0 +1,61 @@
+{
+  "name": "openclaw-suno-music",
+  "version": "1.0.1",
+  "description": "OpenClaw plugin for creating Suno songs, lyrics, personas, credit checks, and local Suno task history.",
+  "type": "module",
+  "main": "./index.mjs",
+  "license": "MIT",
+  "scripts": {
+    "doctor": "node ./scripts/doctor.mjs",
+    "callback": "node ./callback-server.mjs",
+    "prepublish:check": "node ./scripts/prepublish-check.mjs",
+    "pack:dry-run": "npm pack --dry-run"
+  },
+  "keywords": [
+    "openclaw",
+    "plugin",
+    "suno",
+    "music",
+    "ai-music",
+    "lyrics",
+    "persona"
+  ],
+  "files": [
+    "README.md",
+    "LICENSE",
+    "index.mjs",
+    "callback-server.mjs",
+    "openclaw.plugin.json",
+    ".env.example",
+    "scripts/doctor.mjs",
+    "scripts/prepublish-check.mjs"
+  ],
+  "homepage": "https://docs.openclaw.ai/plugins/manage-plugins",
+  "bugs": {
+    "url": "https://docs.openclaw.ai/clawhub/troubleshooting"
+  },
+  "dependencies": {
+    "@sinclair/typebox": "^0.34.41",
+    "openclaw": "latest"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.mjs"
+    ],
+    "compat": {
+      "pluginApi": ">=2026.5.20",
+      "minGatewayVersion": "2026.5.20"
+    },
+    "build": {
+      "openclawVersion": "2026.5.20",
+      "pluginSdkVersion": "2026.5.20"
+    },
+    "install": {
+      "defaultChoice": "clawhub",
+      "minHostVersion": ">=2026.5.20"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "suno-music",
+  "name": "Suno Music",
+  "description": "Generate songs through Suno API. The agent writes original lyrics, chooses a musical style, submits the song, and checks status until audio URLs are ready.",
+  "version": "1.0.0",
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "tools": [
+      "suno_create_song",
+      "suno_generate_lyrics",
+      "suno_lyrics_status",
+      "suno_credit_status",
+      "suno_generate_persona",
+      "suno_song_status",
+      "suno_user_records"
+    ]
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}
